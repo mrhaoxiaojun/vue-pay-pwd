@@ -48,11 +48,11 @@
           },
           pwdWidth:{
             type: Number,
-            default:"260"
+            default:260
           },
           pwdHeight:{
             type: Number,
-            default:"36"
+            default:36
           },
         },
         data() {
