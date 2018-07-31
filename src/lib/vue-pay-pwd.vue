@@ -11,7 +11,7 @@
 -->
 <template>
     <div class="vue-pay-pwd">
-        <input ref="pwd" type="tel" @focus="focus" @blur="blur" maxlength="6" v-model="msg" class="pwd" unselectable="on" />
+        <input ref="pwd" type="tel" :style="{width:pwdWidth+200+'px'}" @focus="focus" @blur="blur" maxlength="6" v-model="msg" class="pwd" />
         <ul class="pwd-wrap" :style="{width:pwdWidth+'px'}">
             <li 
               v-for="(item,index) in pwdAry.length=6" 
@@ -87,17 +87,19 @@
 div,input,ul,li{
   padding:0
 }
+::-ms-clear,::-ms-reveal{display:none;}
 .vue-pay-pwd {
     position: relative;
     display: inline-block;
+    overflow: hidden;
     input[type=tel] {
         position: absolute;
-        left: 0px;
+        left: -200px;
         top: 0;
         right: 0;
         bottom: 0;
         z-index: 999;
-        width: 100%;
+        height: 100%;
         color: transparent;
         cursor: pointer;
         background-color:transparent;
